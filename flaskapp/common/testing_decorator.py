@@ -39,13 +39,13 @@ class TracingWrapper:
         Initialize the instrumentation.
         """
         exporter = ConsoleSpanExporter()
-        provider = TracerProvider(
+        self.provider = TracerProvider(
             resource=Resource.create({SERVICE_NAME: "TESTING_DECORATOR"})
         )
-        trace.set_tracer_provider(provider)
+        trace.set_tracer_provider(self.provider)
         self.tracer = trace.get_tracer(__name__)
         processor = BatchSpanProcessor(exporter)
-        provider.add_span_processor(processor)
+        self.provider.add_span_processor(processor)
 
 
 def instrument_tracing(
