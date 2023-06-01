@@ -1,5 +1,5 @@
 import flask
-from iib.common.testing_decorator import instrument_tracing
+from flaskapp.common.testing_decorator import instrument_tracing
 
 api_v1 = flask.Blueprint("api_v1", __name__)
 

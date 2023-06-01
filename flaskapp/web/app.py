@@ -1,7 +1,7 @@
 from flask import Flask
-from iib.web.api_v1 import api_v1
+from .api_v1 import api_v1
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
-from iib.common.testing_decorator import TracingWrapper
+from flaskapp.common.testing_decorator import TracingWrapper
 
 
 def create_app():
